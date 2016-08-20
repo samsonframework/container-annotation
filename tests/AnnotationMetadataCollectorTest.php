@@ -10,7 +10,7 @@ use samsonframework\containerannotation\AnnotationClassResolver;
 use samsonframework\containerannotation\AnnotationMethodResolver;
 use samsonframework\containerannotation\AnnotationPropertyResolver;
 use samsonframework\containerannotation\AnnotationResolver;
-use samsonframework\container\AnnotationMetadataCollector;
+use samsonframework\containerannotation\AnnotationMetadataCollector;
 use samsonframework\container\Builder;
 use samsonframework\container\metadata\ClassMetadata;
 use samsonframework\containerannotation\tests\classes\CarController;

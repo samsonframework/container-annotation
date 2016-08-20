@@ -10,14 +10,10 @@ use samsonframework\containerannotation\AnnotationClassResolver;
 use samsonframework\containerannotation\AnnotationMethodResolver;
 use samsonframework\containerannotation\AnnotationPropertyResolver;
 use samsonframework\containerannotation\AnnotationResolver;
-use samsonframework\containerannotation\Controller;
-use samsonframework\containerannotation\InjectArgument;
-use samsonframework\containerannotation\Service;
-use samsonframework\container\AnnotationPathMetadataCollector;
+use samsonframework\containerannotation\AnnotationPathMetadataCollector;
 use samsonframework\container\Builder;
 use samsonframework\container\metadata\ClassMetadata;
 use samsonframework\containerannotation\tests\classes\CarController;
-use samsonframework\containerannotation\tests\classes\FastDriver;
 use samsonframework\localfilemanager\LocalFileManager;
 
 class AnnotationPathMetadataCollectorTest extends TestCase
