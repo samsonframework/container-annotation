@@ -5,6 +5,8 @@
  */
 namespace samsonframework\containerannotation;
 
+use samsonframework\container\AbstractMetadataCollector;
+
 /**
  * Annotation class metadata collector.
  * Class resolves and collects class metadata from annotations.

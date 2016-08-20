@@ -5,6 +5,7 @@
  */
 namespace samsonframework\containerannotation;
 
+use samsonframework\container\AbstractMetadataCollector;
 use samsonframework\container\resolver\ResolverInterface;
 use samsonframework\filemanager\FileManagerInterface;
 
