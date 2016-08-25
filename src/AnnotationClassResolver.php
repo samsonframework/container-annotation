@@ -26,7 +26,7 @@ class AnnotationClassResolver extends AbstractAnnotationResolver implements Anno
         $classMetadata->className = $classReflection->name;
         $classMetadata->nameSpace = $classReflection->getNamespaceName();
         $classMetadata->identifier = $classReflection->name;
-        $classMetadata->name = $classMetadata->identifier;
+        $classMetadata->name = $classMetadata->name ?? $classMetadata->identifier;
 
         $this->resolveClassAnnotations($classReflection, $classMetadata);
 
