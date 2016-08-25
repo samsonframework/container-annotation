@@ -17,11 +17,7 @@ use samsonframework\container\metadata\PropertyMetadata;
 class Injectable implements PropertyConfiguratorInterface, AnnotationConfiguratorInterface
 {
     /**
-     * Convert to class property metadata.
-     *
-     * @param PropertyMetadata $propertyMetadata Input metadata
-     *
-     * @return PropertyMetadata Annotation conversion to metadata
+     * {@inheritdoc}
      */
     public function toPropertyMetadata(PropertyMetadata $propertyMetadata)
     {
