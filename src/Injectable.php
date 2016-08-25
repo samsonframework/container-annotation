@@ -25,6 +25,8 @@ class Injectable implements PropertyConfiguratorInterface, AnnotationConfigurato
      */
     public function toPropertyMetadata(PropertyMetadata $propertyMetadata)
     {
-        // Checks?
+        // Add interface or class specified in type hint check
+        // Resolve uses from class or only fully qualified names should be specified?
+        $propertyMetadata->dependency = $propertyMetadata->typeHint;
     }
 }
