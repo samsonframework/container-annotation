@@ -22,8 +22,8 @@ class AnnotationMetadataCollector extends AbstractMetadataCollector
     {
         /** @var array $classes */
 
-        foreach ($classes as $className) {
-            $classesMetadata[$className] = $this->resolver->resolve(new \ReflectionClass($className), $classesMetadata[$className] ?? null);
+        foreach ($classes as $alias => $className) {
+            $classesMetadata[$alias] = $this->resolver->resolve(new \ReflectionClass($className), $classesMetadata[$alias] ?? null);
         }
 
         return $classesMetadata;
