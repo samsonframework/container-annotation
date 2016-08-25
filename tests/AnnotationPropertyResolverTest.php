@@ -24,7 +24,6 @@ class AnnotationPropertyResolverTest extends TestCase
         /** @var ClassMetadata $methodResolver */
         $this->classMetadata = new ClassMetadata();
 
-
         $this->resolver = new AnnotationPropertyResolver(new AnnotationReader(), $this->classMetadata);
     }
 
