@@ -24,10 +24,7 @@ class AnnotationPropertyResolver extends AbstractAnnotationResolver implements A
     {
         /** @var \ReflectionProperty $property */
         foreach ($classReflection->getProperties() as $property) {
-            $this->resolveClassPropertyAnnotations(
-                $property,
-                $this->resolvePropertyMetadata($property, $classMetadata)
-            );
+            $this->resolveClassPropertyAnnotations($property, $classMetadata);
         }
 
         return $classMetadata;
@@ -37,14 +34,19 @@ class AnnotationPropertyResolver extends AbstractAnnotationResolver implements A
      * Resolve class property annotations.
      *
      * @param \ReflectionProperty $property
-     * @param PropertyMetadata    $propertyMetadata
+     * @param ClassMetadata       $classMetadata
      */
-    protected function resolveClassPropertyAnnotations(\ReflectionProperty $property, PropertyMetadata $propertyMetadata)
+    protected function resolveClassPropertyAnnotations(\ReflectionProperty $property, ClassMetadata $classMetadata)
     {
-        /** @var PropertyConfiguratorInterface $annotation Read class annotations */
-        foreach ($this->reader->getPropertyAnnotations($property) as $annotation) {
-            if ($annotation instanceof PropertyConfiguratorInterface) {
-                $annotation->toPropertyMetadata($propertyMetadata);
+        /** @var PropertyConfiguratorInterface[] $annotations Read class annotations */
+        $annotations = $this->reader->getPropertyAnnotations($property);
+        if (count($annotations)) {
+            $propertyMetadata = $this->resolvePropertyMetadata($property, $classMetadata);
+
+            foreach ($annotations as $annotation) {
+                if ($annotation instanceof PropertyConfiguratorInterface) {
+                    $annotation->toPropertyMetadata($propertyMetadata);
+                }
             }
         }
     }
